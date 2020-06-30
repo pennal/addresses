@@ -1,0 +1,6 @@
+applicationType: default
+defaultPackage: ch.onstructive.candidates
+testFramework: spock
+sourceLanguage: java
+buildTool: gradle
+features: [annotation-api, app-name, data, data-jpa, docker, file-watch, flyway, gradle, h2, http-client, java, java-application, jdbc-hikari, logback, netty-server, readme, shade, spock, yaml]
