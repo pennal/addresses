@@ -50,6 +50,13 @@ This module represents the applications itself. It will result in an executable 
 
 Currently `ch.onstructive.candidates.PostalCodeController#update` is not yet implemented. Give it a try an make it possible to update the postal code or the city name of an postal code instance.
 
+```java
+@Put
+public HttpStatus update(@Valid PostalCodePutModel model) {
+    return HttpStatus.OK;
+}
+```
+
 ### Assignment 3 - Add support for street & house numbers 🛠
 
 The application holds a list of postal codes and city names. Your task is to add streets and house numbers to it such as _Untermoosstrasse 36, 8047 Zurich_ contains information such as
@@ -62,6 +69,14 @@ Make sure a street & house number always is assigned to a postal code. Expose a 
 ### Assignment 4 - Prepare a brief presentation 💡
 
 In the 2nd interview you present your solution and explain your design decisions. Be prepared for a brief Q&A.
+
+## Unit & Integration Tests
+
+Please find and extend the test at `server/src/test/groovy`. The tests are written in Groovy using Spock.
+
+## Code style
+
+The code style is enforced by the build. If you run into code style issues simply run `./gradlew spotlessApply` and your code style will be compliant.
 
 ## Once you are done 🎓
 
