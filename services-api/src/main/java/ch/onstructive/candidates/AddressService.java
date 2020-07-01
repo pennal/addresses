@@ -2,6 +2,7 @@
 package ch.onstructive.candidates;
 
 import java.util.List;
+import java.util.Optional;
 
 /**
  * API service for working with the Swiss address directory.
@@ -13,4 +14,6 @@ public interface AddressService {
   List<PostalCodeDTO> findAllPostalCodes();
 
   PostalCodeDTO createPostalCode(PostalCodeDTO postalCode);
+
+  Optional<PostalCodeDTO> find(Long id);
 }

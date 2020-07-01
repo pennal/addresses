@@ -34,10 +34,10 @@ class PostalCodeControllerSpec extends Specification {
 
 	void "There are should be now only one postal code present"() {
 
-		given: 'fetch all available postal codes'
-		List<PostalCodeController.PostalCodeGetModel> postalCodes =  controller.findAllPostalCodes()
+		when: 'fetch all available postal codes'
+		List<PostalCodeController.PostalCodeGetModel> postalCodes = controller.findAllPostalCodes()
 
-		expect:
+		then:
 		postalCodes.size() == 1
 
 		and:
@@ -46,5 +46,17 @@ class PostalCodeControllerSpec extends Specification {
 			postalCode == 9015 as Short
 			name == 'St. Gallen'
 		}
+
+		when:
+		PostalCodeController.PostalCodeGetModel postalCode = controller.findPostalCode(postalCodes.first().id)
+
+		then:
+		postalCode == postalCodes.first()
+
+		when:
+		controller.findPostalCode(28378L)
+
+		then:
+		thrown(NotFoundException)
 	}
 }

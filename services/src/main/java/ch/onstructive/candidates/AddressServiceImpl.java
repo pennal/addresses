@@ -2,6 +2,7 @@
 package ch.onstructive.candidates;
 
 import java.util.List;
+import java.util.Optional;
 
 import javax.inject.Singleton;
 import javax.transaction.Transactional;
@@ -27,6 +28,11 @@ public class AddressServiceImpl implements AddressService {
   public List<PostalCodeDTO> findAllPostalCodes() {
     List<PostalCode> allPostalCodes = postalCodeRepository.findAll();
     return addressServiceMapper.toPostalCodeDTOs(allPostalCodes);
+  }
+
+  @Override
+  public Optional<PostalCodeDTO> find(Long id) {
+    return postalCodeRepository.findById(id).map(addressServiceMapper::toPostalCodeDTO);
   }
 
   @Override

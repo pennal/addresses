@@ -2,6 +2,7 @@
 package ch.onstructive.candidates;
 
 import java.util.List;
+import java.util.Objects;
 
 import javax.validation.Valid;
 import javax.validation.constraints.Max;
@@ -39,12 +40,17 @@ public class PostalCodeController {
         addressService.findAllPostalCodes());
   }
 
+  @Get("/{id}")
+  public PostalCodeGetModel findPostalCode(Long id) {
+    return addressService
+        .find(id)
+        .map(postalCodeControllerMapper::toPostalCodeGetModel)
+        .orElseThrow(() -> new NotFoundException(id, "postalCode"));
+  }
+
   @Post
   public HttpStatus create(@Valid PostalCodePostModel model) {
-
-    PostalCodeDTO postalCode =
-        addressService.createPostalCode(postalCodeControllerMapper.toPostalCodeDTO(model));
-
+    addressService.createPostalCode(postalCodeControllerMapper.toPostalCodeDTO(model));
     return HttpStatus.CREATED;
   }
 
@@ -81,6 +87,21 @@ public class PostalCodeController {
 
     public void setName(String name) {
       this.name = name;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+      if (this == o) return true;
+      if (o == null || getClass() != o.getClass()) return false;
+      PostalCodeGetModel that = (PostalCodeGetModel) o;
+      return Objects.equals(id, that.id)
+          && Objects.equals(postalCode, that.postalCode)
+          && Objects.equals(name, that.name);
+    }
+
+    @Override
+    public int hashCode() {
+      return Objects.hash(id, postalCode, name);
     }
   }
 
