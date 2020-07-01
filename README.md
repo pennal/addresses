@@ -57,3 +57,11 @@ Make sure a street & house number always is assigned to a postal code. Expose a 
 ### Assignment 3 - Prepare a brief presentation 💡
 
 In the 2nd interview you present your solution and explain your design decisions. Be prepared for a brief Q&A.
+
+## Once you are done 🎓
+
+When you are done with your work please raise a pull request. In order to match the PR with your application please provide your full name as a PR comment. Thank you.
+
+## Questions ❔
+
+If you have any questions please do not hesiate to contact me at silvio@onstructive.ch
