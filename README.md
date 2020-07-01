@@ -1,5 +1,7 @@
 # Address directory 📇
 
+![Java CI](https://github.com/onstructive/addresses/workflows/Java%20CI/badge.svg)
+
 ## Introduction
 
 Thank you for applying for a developer position at onstructive. This repository contains a simple Micronaut project that contains a directory of Swiss postal codes. We would like you to continue the development and add support a street and house number directory.
