@@ -1,62 +1,59 @@
-# Address directory
+# Address directory 📇
 
-## Your tasks
+## Introduction
 
-Implement a simple address lookup by using a three tier layer application
+Thank you for applying for a developer position at onstructive. This repository contains a simple Micronaut project that contains a directory of Swiss postal codes. We would like you to continue the development and add support a street and house number directory.
 
- - persistence
- - business services
- - presentation layer (rest api)
+The main goal of this assignment is to understand how you are solving problems.
 
-An address such as _Untermoosstrasse 36, 8047 Zurich, Switzerland_ contains information such as
-
-- Country
-- City
-- Postal code
-- Street name
-- House number
-
-### Assignment 1
-
-Design your persistence layer by defining one or more JPA entities that reflect the domain model _Address_.
-
-### Assignment 2
-
-Implement a rest api to read all addresses.
-
-### Assignment 3
-
-Implement a rest api to search for specific addresses by street, house number, postal code or city.
-
-### Assignment 4
-
-Present your solution and explain your design decisions. Be prepared for a brief Q&A.
-  
 ## Requirements
 
-Make sure you have installed the following things:
+Make sure you have installed the following tools:
 
-- JDK 14
+- JDK 14 (You can use sdkman to easily switch between JDK installations (see https://sdkman.io/jdks)).
+- Your favourite Java IDE. We recommend using IntelliJ IDEA.
+- Gradle (the project provides a Gradlew wrapper, so no installation is required)
 
-You can use sdkman to easily switch between JDK installations (see https://sdkman.io/jdks).
+## Your assigments 📃
 
+### Assignment 1 - Analyze the existing code 👓
 
-## Explanation of the modules
+Walkthrough the existing code and try to run and understand it. We would like you to explain how the application works. Feel free to ask questions on parts you don't understand.
+
+#### Explanation of the modules
 
 Within this project you find the following modules.
 
-### Domain
+##### Domain
 
 The domain module represents the persistence layer and holds JPA entities and their repositories (see https://micronaut-projects.github.io/micronaut-data/latest/guide/).
 
-### Services
+##### Services API
+
+A service api module for interacting with backend services.
+
+##### Services
 
 This is the business service layer that implements specific business logic. It is responsible for defining the transactional boundries.
 
-### REST API
+##### REST API
 
 The rest api consumes the business service layer and 
 
-### Server
+##### Server
 
 This module represents the applications itself. It will result in an executable fat jar. 
+
+
+### Assignment 2 - Add support for street & house numbers 🛠
+
+The application holds a list of postal codes and city names. Your task is to add streets and house numbers to it such as _Untermoosstrasse 36, 8047 Zurich_ contains information such as
+
+- Street name
+- House number
+
+Make sure a street & house number always is assigned to a postal code. Expose a list of streets with their postal code on the REST API at `/api/v1/streets`.
+
+### Assignment 3 - Prepare a brief presentation 💡
+
+In the 2nd interview you present your solution and explain your design decisions. Be prepared for a brief Q&A.
