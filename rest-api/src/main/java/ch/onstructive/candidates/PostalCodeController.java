@@ -12,6 +12,7 @@ import javax.validation.constraints.NotNull;
 
 import io.micronaut.core.annotation.Introspected;
 import io.micronaut.http.HttpStatus;
+import io.micronaut.http.annotation.Body;
 import io.micronaut.http.annotation.Controller;
 import io.micronaut.http.annotation.Get;
 import io.micronaut.http.annotation.Post;
@@ -49,13 +50,13 @@ public class PostalCodeController {
   }
 
   @Post
-  public HttpStatus create(@Valid PostalCodePostModel model) {
+  public HttpStatus create(@Valid @Body PostalCodePostModel model) {
     addressService.createPostalCode(postalCodeControllerMapper.toPostalCodeDTO(model));
     return HttpStatus.CREATED;
   }
 
   @Put
-  public HttpStatus update(@Valid PostalCodePutModel model) {
+  public HttpStatus update(@Valid @Body PostalCodePutModel model) {
     return HttpStatus.OK;
   }
 
