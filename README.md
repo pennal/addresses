@@ -20,6 +20,8 @@ Make sure you have installed the following tools:
 
 Walkthrough the existing code and try to run and understand it. We would like you to explain how the application works. Feel free to ask questions on parts you don't understand.
 
+For IntelliJ users: The repository contains a file called `postalCodes.http` that can be used to run HTTP calls against locally running Micronaut application. This might help you to discover the application.
+
 #### Explanation of the modules
 
 Within this project you find the following modules.
@@ -44,8 +46,11 @@ The rest api consumes the business service layer and
 
 This module represents the applications itself. It will result in an executable fat jar. 
 
+### Assignment 2 - Implement update postal code 🛠
 
-### Assignment 2 - Add support for street & house numbers 🛠
+Currently `ch.onstructive.candidates.PostalCodeController#update` is not yet implemented. Give it a try an make it possible to update the postal code or the city name of an postal code instance.
+
+### Assignment 3 - Add support for street & house numbers 🛠
 
 The application holds a list of postal codes and city names. Your task is to add streets and house numbers to it such as _Untermoosstrasse 36, 8047 Zurich_ contains information such as
 
@@ -54,7 +59,7 @@ The application holds a list of postal codes and city names. Your task is to add
 
 Make sure a street & house number always is assigned to a postal code. Expose a list of streets with their postal code on the REST API at `/api/v1/streets`.
 
-### Assignment 3 - Prepare a brief presentation 💡
+### Assignment 4 - Prepare a brief presentation 💡
 
 In the 2nd interview you present your solution and explain your design decisions. Be prepared for a brief Q&A.
 

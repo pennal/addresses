@@ -26,7 +26,7 @@ public class PostalCode {
   /** the numeric postal code value such as 8000 or 6926. */
   @Min(1000)
   @Max(9999)
-  @Column(nullable = false)
+  @Column(nullable = false, unique = true)
   private Short postalCode;
 
   /** Display name for the {@link PostalCode#postalCode}. E.g. Zurich or Gentilino. */
