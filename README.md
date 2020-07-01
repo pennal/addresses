@@ -46,7 +46,7 @@ This is the business service layer that implements specific business logic. It i
 
 ##### REST API
 
-The rest api consumes the business service layer and 
+The rest api consumes the business service layer and transforms the data to the REST model.
 
 ##### Server
 
