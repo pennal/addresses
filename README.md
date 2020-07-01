@@ -14,9 +14,13 @@ Make sure you have installed the following tools:
 
 - JDK 14 (You can use sdkman to easily switch between JDK installations (see https://sdkman.io/jdks)).
 - Your favourite Java IDE. We recommend using IntelliJ IDEA.
-- Gradle (the project provides a Gradlew wrapper, so no installation is required)
+- Gradle (the project provides a Gradlew wrapper, so no additional installation is required)
 
-## Your assigments 📃
+## Your assignments 📃
+
+### Fork this repo
+
+Please fork this repository and make your fork repo private. By doing it that way your application and personal data remains private and only onstructive HR has knowlegde of it.
 
 ### Assignment 1 - Analyze the existing code 👓
 
@@ -82,7 +86,7 @@ The code style is enforced by the build. If you run into code style issues simpl
 
 ## Once you are done 🎓
 
-When you are done with your work please raise a pull request. In order to match the PR with your application please provide your full name as a PR comment. Thank you.
+When you are done with your work please please give `saw303` access to your private fork repository and send me the link to the repository at silvio@onstructive.ch. Thank you.
 
 ## Questions ❔
 
