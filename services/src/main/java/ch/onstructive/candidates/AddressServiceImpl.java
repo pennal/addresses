@@ -48,7 +48,10 @@ public class AddressServiceImpl implements AddressService {
     PostalCode currentPostalCode = addressServiceMapper.toPostalCode(current);
     PostalCode updatedPostalCode = addressServiceMapper.toPostalCode(updated);
 
-    postalCodeRepository.update(currentPostalCode.getId(), updatedPostalCode.getDisplayName(), updatedPostalCode.getPostalCode());
+    postalCodeRepository.update(
+        currentPostalCode.getId(),
+        updatedPostalCode.getDisplayName(),
+        updatedPostalCode.getPostalCode());
     return addressServiceMapper.toPostalCodeDTO(updatedPostalCode);
   }
 }

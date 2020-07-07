@@ -63,10 +63,10 @@ class PostalCodeControllerSpec extends Specification {
 	void "Update a postal code"() {
 		// Then modify and update
 		when:
-			PostalCodeController.PostalCodeGetModel updated = controller.update(new PostalCodeController.PostalCodePutModel(postalCode: 6900, name: "Lugano Massagno", id: 1))
+		PostalCodeController.PostalCodeGetModel updated = controller.update(new PostalCodeController.PostalCodePutModel(postalCode: 6900, name: "Lugano Massagno", id: 1))
 		then:
-			updated.id == 1
-			updated.postalCode == 6900
-			updated.name == 'Lugano Massagno'
+		updated.id == 1
+		updated.postalCode == 6900
+		updated.name == 'Lugano Massagno'
 	}
 }

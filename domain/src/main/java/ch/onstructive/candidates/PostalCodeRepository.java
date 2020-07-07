@@ -14,6 +14,8 @@ import io.micronaut.data.jpa.repository.JpaRepository;
 public interface PostalCodeRepository extends JpaRepository<PostalCode, Long> {
   PostalCode findByPostalCode(Short postalCode);
 
-  @Query(value = "UPDATE PostalCode SET displayName=:displayName, postalCode=:postalCode WHERE id=:id", nativeQuery = true)
+  @Query(
+      value = "UPDATE PostalCode SET displayName=:displayName, postalCode=:postalCode WHERE id=:id",
+      nativeQuery = true)
   PostalCode update(Long id, String displayName, Short postalCode);
 }

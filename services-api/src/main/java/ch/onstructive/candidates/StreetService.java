@@ -1,14 +1,15 @@
+/* Licensed under Apache-2.0 */
 package ch.onstructive.candidates;
 
 import java.util.List;
 import java.util.Optional;
 
 public interface StreetService {
-    List<StreetDTO> findAllStreets();
+  List<StreetDTO> findAllStreets();
 
-    StreetDTO createStreet(StreetDTO streetDTO, PostalCodeDTO postalCodeDTO);
+  StreetDTO createStreet(StreetDTO streetDTO, PostalCodeDTO postalCodeDTO);
 
-    StreetDTO update(StreetDTO current, StreetDTO updated);
+  StreetDTO update(StreetDTO current, StreetDTO updated);
 
-    Optional<StreetDTO> find(Long id);
+  Optional<StreetDTO> find(Long id);
 }

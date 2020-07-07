@@ -54,12 +54,14 @@ public class PostalCodeController {
   @Put
   public PostalCodeGetModel update(@Valid @Body PostalCodePutModel model) {
     return addressService
-      .find(model.getId())
-      .map(fetched -> {
-        PostalCodeDTO postalCodeDTO = postalCodeControllerMapper.toPostalCodeDTO(model);
-        return postalCodeControllerMapper.toPostalCodeGetModel(addressService.updatePostalCode(fetched, postalCodeDTO));
-      })
-      .orElseThrow(() -> new NotFoundException(model.getId(), "postalCode"));
+        .find(model.getId())
+        .map(
+            fetched -> {
+              PostalCodeDTO postalCodeDTO = postalCodeControllerMapper.toPostalCodeDTO(model);
+              return postalCodeControllerMapper.toPostalCodeGetModel(
+                  addressService.updatePostalCode(fetched, postalCodeDTO));
+            })
+        .orElseThrow(() -> new NotFoundException(model.getId(), "postalCode"));
   }
 
   static class PostalCodeGetModel {
