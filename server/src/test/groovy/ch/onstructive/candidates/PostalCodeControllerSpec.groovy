@@ -32,6 +32,23 @@ class PostalCodeControllerSpec extends Specification {
 		httpStatus == HttpStatus.CREATED
 	}
 
+	void "Update a postal code"() {
+		when:
+			HttpStatus httpStatus = controller.create(new PostalCodeController.PostalCodePostModel(postalCode: 6900 as Short, name: 'Lugano'))
+
+		then:
+			httpStatus == HttpStatus.CREATED
+
+		// Modify and update
+		when:
+
+			PostalCodeController.PostalCodeGetModel updated = controller.update(new PostalCodeController.PostalCodePutModel(postalCode: 6900, name: "Lugano Massagno", id: 1))
+		then:
+			updated.id == 1
+			updated.postalCode == 6900
+			updated.name == 'Lugano Massagno'
+	}
+
 	void "There are should be now only one postal code present"() {
 
 		when: 'fetch all available postal codes'
