@@ -25,4 +25,8 @@ public interface PostalCodeControllerMapper {
   @Mapping(target = "id", ignore = true)
   @Mapping(target = "version", ignore = true)
   PostalCodeDTO toPostalCodeDTO(PostalCodeController.PostalCodePostModel model);
+
+  @Mapping(target = "displayName", source = "name")
+  @Mapping(target = "version", ignore = true)
+  PostalCodeDTO toPostalCodeDTO(PostalCodeController.PostalCodePutModel model);
 }

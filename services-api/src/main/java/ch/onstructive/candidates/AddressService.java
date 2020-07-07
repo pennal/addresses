@@ -15,5 +15,7 @@ public interface AddressService {
 
   PostalCodeDTO createPostalCode(PostalCodeDTO postalCode);
 
+  PostalCodeDTO updatePostalCode(PostalCodeDTO current, PostalCodeDTO updated);
+
   Optional<PostalCodeDTO> find(Long id);
 }

@@ -12,11 +12,7 @@ import javax.validation.constraints.NotNull;
 
 import io.micronaut.core.annotation.Introspected;
 import io.micronaut.http.HttpStatus;
-import io.micronaut.http.annotation.Body;
-import io.micronaut.http.annotation.Controller;
-import io.micronaut.http.annotation.Get;
-import io.micronaut.http.annotation.Post;
-import io.micronaut.http.annotation.Put;
+import io.micronaut.http.annotation.*;
 
 /**
  * REST controller for postal codes.
@@ -56,8 +52,14 @@ public class PostalCodeController {
   }
 
   @Put
-  public HttpStatus update(@Valid @Body PostalCodePutModel model) {
-    return HttpStatus.OK;
+  public PostalCodeGetModel update(@Valid @Body PostalCodePutModel model) {
+    return addressService
+      .find(model.getId())
+      .map(fetched -> {
+        PostalCodeDTO postalCodeDTO = postalCodeControllerMapper.toPostalCodeDTO(model);
+        return postalCodeControllerMapper.toPostalCodeGetModel(addressService.updatePostalCode(fetched, postalCodeDTO));
+      })
+      .orElseThrow(() -> new NotFoundException(model.getId(), "postalCode"));
   }
 
   static class PostalCodeGetModel {
