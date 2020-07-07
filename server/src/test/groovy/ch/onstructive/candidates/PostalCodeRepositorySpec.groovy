@@ -34,6 +34,22 @@ class PostalCodeRepositorySpec extends Specification {
 		zurich.version == 0
 	}
 
+	void "Update a postal code"() {
+		when:
+			PostalCode lugano = new PostalCode(postalCode: 6900 as Short, displayName: "Lugano")
+			lugano = postalCodeRepository.save(lugano)
+
+		then:
+			lugano.id != null
+
+		when:
+			lugano.setDisplayName("Lugano Massagno")
+			lugano = postalCodeRepository.update(lugano.id, lugano.displayName, lugano.postalCode)
+		then:
+			lugano.displayName == 'Lugano Massagno'
+			lugano.postalCode == 6900 as Short
+	}
+
 	void "Find postal code 8047"() {
 
 		when:
